@@ -8,8 +8,8 @@
 
 /* CSS Index Tabel
 -----------------------------------
-## Global Variable and style
-01. Demo 01 Section
+
+01. Demo 01
   1.1.  Section
 */
 
@@ -18,20 +18,21 @@
 /* ------- Colors and Fonts ----- */
 $body-color:#E5E5E5;
 $white-color: #FFFFFF;
-$white-color-fa:#FAFAFA;
-$white-color-f2: #F2F2F2;
-$gray-color:#D5D9DA;
+$black-color-full:rgb(0, 0, 0);
+$black-color:   rgb(76, 76, 76);
+$yellow-color:rgb(204, 153, 0);
+
 
 $scroll-menu-bg-color:#0440BD;
 $preloader-bg-color:#070707;
 $scroll-to-up-bg-color: black;
 $scroll-to-up-color: white;
 
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Yeseva+One&display=swap');
 
-
-
-
-
+$yeseva_font:'Yeseva One', cursive;
+$gentium_font:'Gentium Book Basic', serif;
+$lato_font:'Lato', sans-serif;
 
 
 
@@ -40,7 +41,8 @@ $scroll-to-up-color: white;
 html {
   font-size: 62.5%;
   /* overflow-x: hidden; */
-  scroll-behavior: smoot
+  scroll-behavior: smoot;
+
 }
 
 *,
@@ -50,7 +52,7 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $lato_font;
   font-size: 1.6rem;
   position: relative;
   height: 100%;
@@ -67,22 +69,17 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p,
-a,
-button,
-li,
-span,
-input,
-select,
-textarea {
-  font-family: Arial, Helvetica, sans-serif;
+h6
+{
+  font-family:$yeseva_font;
 }
 
 p {
-  font-size: 1.7rem;
+  font-family: $lato_font;
+  font-size: 1.6rem;
   font-weight: 400;
-  color: black;
+  color: $black-color;
+  line-height: 1.5;
 }
 
 a {
@@ -235,7 +232,16 @@ input[type=number] {
 
 // ========== Extends ===========
 
+%title_font{
+  font-size: 3.6rem;
 
+  line-height: 4rem;
+  @include mediaMaxWidth(767px){
+    font-size: 3rem;
+    line-height: 3rem;
+
+  }
+}
 
 
 
@@ -377,18 +383,363 @@ input[type=number] {
   background-color: $scroll-menu-bg-color;
   transition: all 0.5s ease-in-out;
 
+}
 
 
+/* ============  Food Section =========== */
+.food_wrapper{
+  background-image: url(assets/images/RightFood/rightBG.png);
+  @include Background-image( );
+  padding: 10rem 0 8rem 0;
+  .tree_content_area{
+    h2{
 
+      color: $yellow-color;
+      @extend %title_font;
+
+    }
+    .right_divider{
+      width: 26rem;
+      margin-top: 1rem;
+      @include mediaMaxWidth(767px){
+         width: 20rem;
+
+      }
+    }
+    p{
+      margin-top: 3.6rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    .right_user{
+      text-align: center;
+      margin-top: 5rem;
+       img{
+
+
+        width: 21.1rem;
+        height: 22.1rem;
+        @include Button-hover-transition();
+
+        &:hover{
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+}
+
+       }
+
+}
+  }
+  .right_img{
+    text-align: center;
+    img{
+      width: 62.1rem;
+      height: 59.5rem;
+      margin-top: -5rem;
+      @include mediaBreakWidth(922px, 1300px){
+        width: 46.1rem;
+        height: 43.5rem;
+      }
+      @include mediaBreakWidth(768px, 991px){
+        width: 36.1rem;
+        height: 36.5rem;
+      }
+      @include mediaBreakWidth(575px, 767px){
+        width: 50.1rem;
+    height: 50.5rem;
+    margin-top: 2rem;
+      }
+      @include mediaMaxWidth(574px){
+        width: 30.1rem;
+        height: 30.5rem;
+        margin-top: 2rem;
+      }
+
+    }
+  }
+}
+
+/* ============  Tree Section =========== */
+.tree_wrapper{
+  background-image: url(assets/images/Tree/treeBG.png);
+  @include Background-image( );
+  background-attachment: scroll;
+  padding: 10rem 0;
+
+  .tree_content_area{
+
+
+    background-color: rgba($black-color-full, 0.6);
+    padding: 5rem;
+    h2{
+      @extend %title_font;
+      color: $white-color;
+    }
+    img{
+      width: 25rem;
+      margin-top: 1rem;
+      @include mediaMaxWidth(767px){
+        width: 18rem;
+
+     }
+    }
+    p{
+      color: $white-color;
+      margin: 2rem 0 4rem 0;
+
+    }
+  }
+  .tree_inner_img{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    img{
+      width: 11.4rem;
+      height: 11.4rem;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+}
+  }
 
 }
 
 
+/* ============  Food Menu Section =========== */
+.food_menu_wrapper{
+  background-image: url(assets/images/menu/menuBG.png);
+  @include Background-image( );
+  background-attachment: scroll;
+  padding: 6rem 0 8rem 0;
+  .food_items_area {
+    margin-top: 4rem;
+
+    @include mediaMinWidth(768px){
+      width: 80%;
+    }
+}
+  .food_items_menu_title{
+    h2{
+      @extend %title_font;
+      color: $yellow-color;
+      text-transform: capitalize;
+    }
+    img{
+      width: 26rem;
+      margin-top: 1rem;
+      @include mediaMaxWidth(767px){
+         width: 20rem;
+
+      }
+    }
+  }
+  .food_menu_items{
+
+    margin-top: 4rem;
+
+  }
+  .food_menu_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+    border-bottom: 0.06px solid rgba(245, 223, 157, 0.808);
+    h3 , p{
+      font-size: 21px;
+      font-family: $yeseva_font;
+      color: rgb(200, 159, 45);
+      line-height: 2rem;
+      text-transform: capitalize;
+    }
+  }
+  .menu_paragraph{
+    font-weight: 600;
+    margin-top: 0.7rem;
+  }
+  .fourth_menu{
+    @include mediaMinWidth(575px){
+      margin-top: -7rem;
+    }
+
+  }
+  .special_items{
+    position: relative;
+    padding: 6px;
+    border: 0.06px solid rgba(245, 223, 157, 0.808);
+    .special_text{
+      position: absolute;
+      right: 0;
+      top: -2.3rem;
+      font-size: 1.4rem;
+      color: rgb(248, 250, 250);
+      text-transform: capitalize;
+          padding: 1px 1.2rem;
+      background-color: rgba(208, 180, 96 , 81%);
+    }
+  }
+}
+
+/* ============  Review Section =========== */
+.review_wrapper{
+  background-image: url(assets/images/review/reviewB.png);
+  @include Background-image( );
+  background-attachment: scroll;
+  padding: 10rem 0;
+  .slider_wrapper{
+    padding-top: 4rem;
+    background-color: rgba($black-color-full, 0.6);
+  }
+  .swiper-pagination{
+    span{
+      color: $yellow-color
+    }
+  }
+  .review_title{
+    h3{
+      @extend %title_font;
+      color: $white-color;
+    }
+    img{
+      width: 26rem;
+
+      @include mediaMaxWidth(767px){
+         width: 20rem;
+
+      }
+    }
+  }
+  .review_items_area{
+    padding: 0rem 3rem 7rem 2rem;
+
+  }
+  .review_content{
+
+    margin-top: 2rem;
+
+    display: flex;
+
+    p{
+      font-family: $gentium_font;
+      font-size: 2rem;
+      color: rgb(221, 224, 223);
+      font-weight: bold;
+      line-height: 1.8;
+      span{
+        display: block;
+        margin-top: 3rem;
+      }
+
+    }
+
+  }
+  .review_quote_icon{
+    i{
+      font-size: 2.5rem;
+      margin-right: 1rem;
+
+    }
+  }
+}
+
+/* ============  Contact Section =========== */
+.Contact_wrapper{
+  background-image: url(assets/images/RightFood/rightBG.png);
+  @include Background-image( );
+  background-attachment: scroll;
+  padding: 10rem 0 8rem 0;
+  .contact_images{
+    display: flex;
+    justify-content: space-between;
+    @include mediaMinWidth(768px){
+      width: 90%;
+    }
+    img{
+      width: 23rem;
+      height: 48rem;
+      &:nth-child(1){
+        @include mediaMaxWidth(1199px){
+          width: 100%;
+        }
+        @include mediaMaxWidth(767px){
+          height: 40rem;
+          margin-bottom: 3rem;
+        }
+      }
+      &:nth-child(2){
+        @include mediaMaxWidth(1199px){
+          display: none
+        }
+      }
+    }
+  }
+  .contact_area{
+    h2{
+      @extend %title_font;
+      color: $yellow-color;
+    }
+    img{
+      width: 26rem;
+
+      @include mediaMaxWidth(767px){
+         width: 20rem;
+
+      }
+    }
+
+
+  }
+  .contact_paragraph{
+    margin: 3rem 0;
+    p{
+      color: rgb(76, 76, 76);
+      font-weight: 500;
+    }
+  }
+  .contact_form_area{
+    label{
+      font-size: 1.4rem;
+      color: rgb(201, 161, 49);
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    ::placeholder{
+      font-size: 16px;
+      font-family: "Open Sans";
+      color: rgb(124, 124, 124);
+      font-style: italic;
+      line-height: 1.2;
+    }
+    input,select{
+      font-size: 1.6rem;
+      color: rgb(124, 124, 124);
+      padding:  0.8rem;
+      border-width: 1px;
+      border-color: rgb(200, 198, 198);
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 0.4);
+      &:focus{
+        border: 1px solid rgb(200, 159, 45) !important;
+      }
+    }
+    .submit_btn{
+      font-size: 16px;
+      font-family: "Open Sans";
+      color: rgb(255, 255, 255);
+      padding: 0.6rem 4rem;
+      margin-top: 3rem;
+      background-color: rgba(200, 159, 45, 0.98);
+    }
+  }
+}
 
 
 
-
-/* ============  Section =========== */
-/* ============  Section =========== */
 /* ============  Section =========== */
 /* ============  Section =========== */

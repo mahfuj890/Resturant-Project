@@ -1,0 +1,34 @@
+.bg {
+  border-width: 1px;
+  border-color: rgb(200, 159, 45);
+  border-style: solid;
+  background-color: rgba(200, 159, 45, 0.98);
+  position: absolute;
+  left: 1001px;
+  top: 4541px;
+  width: 198px;
+  height: 34px;
+  z-index: 79;
+}
+.Book_now_ {
+  font-size: 16px;
+  font-family: "Open Sans";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: center;
+  position: absolute;
+  left: 1002.961px;
+  top: 4551.289px;
+  width: 77px;
+  height: 13px;
+  z-index: 80;
+}
+.image {
+  background-image: url("image.png");
+  position: absolute;
+  left: 215px;
+  top: 4070px;
+  width: 270px;
+  height: 507px;
+  z-index: 93;
+}

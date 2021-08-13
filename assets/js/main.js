@@ -35,35 +35,46 @@
 
 })(jQuery);
 // ScrollToUp
-window.addEventListener("scroll", function () {
-  var scroll = document.querySelector(".scrolltop");
-  scroll.classList.toggle("scroll_active", window.scrollY > 500);
+// window.addEventListener("scroll", function () {
+//   var scroll = document.querySelector(".scrolltop");
+//   scroll.classList.toggle("scroll_active", window.scrollY > 500);
 
 
-})
+// })
 
-function scrollUp() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  })
-}
+// function scrollUp() {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   })
+// }
 
 // Preloader
-function preloader() {
-  var pre_number = setInterval(function () {
-    var pre_class = parseInt($(".preloader_number").text());
-    $(".preloader_number").text((++pre_class).toString());
-    if (pre_class == 100) {
-      clearInterval(pre_number);
-      $(".preloader_number").addClass("pre_hide");
-      $(".preloader").addClass("pre_active");
+// function preloader() {
+//   var pre_number = setInterval(function () {
+//     var pre_class = parseInt($(".preloader_number").text());
+//     $(".preloader_number").text((++pre_class).toString());
+//     if (pre_class == 100) {
+//       clearInterval(pre_number);
+//       $(".preloader_number").addClass("pre_hide");
+//       $(".preloader").addClass("pre_active");
 
-    }
-  })
-}
-preloader();
+//     }
+//   })
+// }
+// preloader();
 
+
+var swiper = new Swiper('.review_wrapper .swiper-container', {
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction',
+  },
+  autoplay: {
+    delay: 5000,
+  },
+
+});
 
 // AOS On Page Scroll JS
 $(function () {
